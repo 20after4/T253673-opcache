@@ -1,19 +1,29 @@
 # T253673
 
-## build & run the container:
+## build & run the server
 ```
-make build
-make run
-```
-
-## get opcache info:
-```
-curl http://localhost:8080/mon/index.php?/opcache-info
+make start-server
 ```
 
-## siege the server
+## Cause php files to be changed constantly
 ```
-siege -f urls.txt -c 10 --log=siege.log
+make update-files-loop &
+```
+
+## Hammer the server with requests
+```
+# Stops at the first failure
+make siege
+```
+
+## get opcache info
+```
+make info
+```
+
+## stop the server
+```
+make stop-server
 ```
 
 https://phabricator.wikimedia.org/T253673

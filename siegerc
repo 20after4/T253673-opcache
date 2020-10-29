@@ -1,0 +1,2 @@
+# Stop when the first error is encountered
+failures=1
